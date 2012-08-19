@@ -16,7 +16,7 @@ var (
 	b = flag.Bool("b", false, "Blank the sign")
 	s = flag.Bool("s", false, "Read from stdin")
 	f = flag.String("f", "", "Read from file")
-	bjson = flag.Bool("json", true, "Export protocol to json")
+	bjson = flag.Bool("json", false, "Export protocol to json")
 )
 
 func main() {
