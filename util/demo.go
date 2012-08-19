@@ -16,6 +16,10 @@ func main() {
 		fmt.Printf("{%s}%s\n", k, k)
 	}
 
+	for k := range asign.Color {
+		fmt.Printf("{WipeIn}{%s}%s\n", k, k)
+	}
+
 	fmt.Println("{ETX}")
 	fmt.Println("{EOT}")
 }
