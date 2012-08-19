@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"github.com/Krussell/asign"
 	"github.com/Krussell/usb"
@@ -15,10 +16,22 @@ var (
 	b = flag.Bool("b", false, "Blank the sign")
 	s = flag.Bool("s", false, "Read from stdin")
 	f = flag.String("f", "", "Read from file")
+	bjson = flag.Bool("json", true, "Export protocol to json")
 )
 
 func main() {
 	flag.Parse()
+
+	if *bjson {
+		j,err := json.MarshalIndent(&protocol, "", "   ")
+		if err != nil {
+			log.Fatalln(err)
+			return
+		}
+		println(string(j))
+		return
+	}
+
 	if *t == "" && *b == false && *s == false && *f == "" {
 		return
 	}
