@@ -19,6 +19,12 @@ func main() {
 	for k := range asign.Color {
 		fmt.Printf("{WipeIn}{%s}%s\n", k, k)
 	}
+	fmt.Println("{ETX}")
+	
+	fmt.Println("{STX}\n{WriteText}{B}")
+	for k := range asign.ExtendedCharacter {
+		fmt.Printf("{RollUp}%s:{%s}\n", k, k)
+	}
 
 	fmt.Println("{ETX}")
 	fmt.Println("{EOT}")
