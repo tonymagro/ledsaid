@@ -11,6 +11,7 @@ type protocolDef struct {
 	DisplayPosition   map[string]byte
 	ModeCode          map[string]byte
 	SpecialMode       map[string]byte
+	SpecialGraphics   map[string]byte
 	Color             map[string]byte
 	ValidLabel        map[string]byte
 	ExtendedCharacter map[string]byte
@@ -23,6 +24,7 @@ var protocol = protocolDef{
 	asign.DisplayPosition,
 	asign.ModeCode,
 	asign.SpecialMode,
+	asign.SpecialGraphics,
 	asign.Color,
 	asign.ValidLabel,
 	asign.ExtendedCharacter,
