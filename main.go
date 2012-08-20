@@ -7,15 +7,17 @@ import (
 	"github.com/Krussell/usb"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 )
 
 var (
-	t = flag.String("t", "", "Template")
-	a = flag.Bool("a", true, "Automatically allocate memory")
-	b = flag.Bool("b", false, "Blank the sign")
-	s = flag.Bool("s", false, "Read from stdin")
-	f = flag.String("f", "", "Read from file")
+	t     = flag.String("t", "", "Template")
+	a     = flag.Bool("a", true, "Automatically allocate memory")
+	b     = flag.Bool("b", false, "Blank the sign")
+	s     = flag.Bool("s", false, "Read from stdin")
+	f     = flag.String("f", "", "Read from file")
+	w     = flag.String("w", "", "Read from web address")
 	bjson = flag.Bool("json", false, "Export protocol to json")
 )
 
@@ -23,16 +25,12 @@ func main() {
 	flag.Parse()
 
 	if *bjson {
-		j,err := json.MarshalIndent(&protocol, "", "   ")
+		j, err := json.MarshalIndent(&protocol, "", "   ")
 		if err != nil {
 			log.Fatalln(err)
 			return
 		}
 		println(string(j))
-		return
-	}
-
-	if *t == "" && *b == false && *s == false && *f == "" {
 		return
 	}
 
@@ -90,6 +88,26 @@ func main() {
 	if *s {
 		println("Reading from stdin")
 		buf, err := ioutil.ReadAll(os.Stdin)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+		_, err = sign.WriteTemplate(buf)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+	}
+
+	if *w != "" {
+		println("Reading from web address:", *w)
+		r, err := http.Get(*w)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+		buf, err := ioutil.ReadAll(r.Body)
+		println(string(buf))
 		if err != nil {
 			log.Println(err)
 			return
