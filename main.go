@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"flag"
-	"github.com/Krussell/asign"
-	"github.com/Krussell/usb"
+	"github.com/krussell/asign"
+	"github.com/krussell/usb"
 	"io/ioutil"
 	"log"
 	"net/http"

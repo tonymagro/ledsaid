@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Krussell/asign"
+	"github.com/krussell/asign"
 )
 
 type protocolDef struct {
