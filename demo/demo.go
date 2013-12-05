@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/krussell/asign"
+	"github.com/tonymagro/asign"
 )
 
 func main() {
