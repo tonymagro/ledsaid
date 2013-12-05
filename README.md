@@ -5,7 +5,7 @@ LEDSaid uses the asign library (https://github.com/krussell/asign) to send packe
 
 ## Demo Packet
 This packet displays most features of the alpha sign protocol:  
-https://github.com/krussell/ledsaid/blob/master/demo/demo.txt
+https://github.com/tonymagro/ledsaid/blob/master/demo/demo.txt
 
 ## Read from a web address
 You can load a file served over http using the -w flag
