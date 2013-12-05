@@ -10,4 +10,4 @@ https://github.com/krussell/ledsaid/blob/master/demo/demo.txt
 ## Read from a web address
 You can load a file served over http using the -w flag
 
-	ledsaid -w "https://raw.github.com/krussell/ledsaid/master/demo/demo.txt"
+	ledsaid -w "https://raw.github.com/tonymagro/ledsaid/master/demo/demo.txt"
