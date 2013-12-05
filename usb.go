@@ -3,8 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/krussell/asign"
-	"github.com/krussell/usb"
+	"github.com/tonymagro/asign"
+	"github.com/tonymagro/usb"
 	"log"
 )
 

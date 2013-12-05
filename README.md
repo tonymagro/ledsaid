@@ -1,4 +1,4 @@
-LEDSaid uses the asign library (https://github.com/krussell/asign) to send packets to Alpha LED Signs.
+LEDSaid uses the asign library (https://github.com/tonymagro/asign) to send packets to Alpha LED Signs.
 
 ## Simple Hello World Example
 	ledsaid -t "{SOT}{STX}{WriteText}{A}{Flash}{Red}Hello {Green}World{ETX}{EOT}"
